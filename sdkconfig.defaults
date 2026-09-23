@@ -1,0 +1,12 @@
+# 通用默认配置占位文件（本工程仅针对 ESP32-S3，实际配置项维护在 sdkconfig.defaults.esp32s3）
+#
+# 【为什么需要这个文件】
+# ESP-IDF (6.1) 的自动加载规则是：
+#   1. 先加载项目根目录的 sdkconfig.defaults
+#   2. 仅当上面的文件存在时，才继续加载 sdkconfig.defaults.<target>（即 sdkconfig.defaults.esp32s3）
+#   3. 已存在的 sdkconfig 中的显式值优先级最高，defaults 不会覆盖它
+# 因此若本文件不存在，sdkconfig.defaults.esp32s3 不会被自动加载。
+#
+# 【注意】
+# idf.py save-defconfig 的输出路径固定为 sdkconfig.defaults（不支持 -o 参数），
+# 重新导出后请将内容同步到 sdkconfig.defaults.esp32s3，并保持本文件只留注释。

@@ -1,0 +1,14 @@
+# 名称,     类型, 子类型,    偏移,      大小
+# 布局说明 (16MB flash):
+#   偏移全部写死, app 分区 64K 对齐 / data 分区 4K 对齐, 精确铺满 16MB。
+#   app 镜像约 2.90MB, 4M 槽位余量 ~38%; storage 用于字体/图片等文件存储;
+#   coredump 用于保存 panic 现场, 便于离线分析死机 (详见 README 第 5 节)。
+#   注意: 分区表已变更(新增 coredump, storage 缩小为 3904K), 需要重新烧录分区表。
+nvs,        data, nvs,      0x9000,    0x6000,
+otadata,    data, ota,      0xf000,    0x2000,
+phy_init,   data, phy,      0x11000,   0x1000,
+factory,    app,  factory,  0x20000,   4M,
+ota_0,      app,  ota_0,    0x420000,  4M,
+ota_1,      app,  ota_1,    0x820000,  4M,
+storage,    data, fat,      0xc20000,  3904K,
+coredump,   data, coredump, 0xff0000,  64K,
