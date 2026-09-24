@@ -23,7 +23,7 @@
   "clangd.arguments": [
     "--background-index",
     "--query-driver=**",
-    "--compile-commands-dir=/home/Akarin/Program/ESP32_Learning/build"
+    "--compile-commands-dir=build"
   ],
   "idf.currentSetup": "/home/Akarin/.espressif/v6.1/esp-idf",
   "idf.openOcdConfigs": [
@@ -31,6 +31,8 @@
     "target/esp32s3.cfg"
   ],
   "idf.customExtraVars": {
-    "IDF_TARGET": "esp32s3"
+    "IDF_TARGET": "esp32s3",
+    "IDF_PATH": "/home/Akarin/.espressif/v6.1/esp-idf",
+    "IDF_TOOLS_PATH": "/home/Akarin/.espressif"
   }
 }
